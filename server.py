@@ -24,7 +24,7 @@ def application_form():
                             "Product Manager"])
 
 
-@app.route('/application-response', methods=["POST"])
+@app.route('/application-success', methods=["POST"])
 def application_response():
 
     first_name = request.form["first"]
