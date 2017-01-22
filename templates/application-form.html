@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %} Application Form {% endblock %} 
+{% block content %}
+
+    <h1>Welcome! We are happy that you have trusted us to help you with your
+        job search.  Please fill in all of the fields below.  We will then 
+        contact you with matching job opportunities.</h1><br><br>
+
+    <form action="/application-response" method="POST" class="form-box">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="column-xs-4">
+
+                    <!--Input Starts-->
+                    <label for="first">First Name:</label>
+                    <input id="first" type="text" name="first" placeholder="first name" required>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <label for="last">Last Name:</label>
+                    <input id="last" type="text/css" name="last" placeholder="last name" id="bold" required><br><br>
+                </div>
+            </div>
+
+            <!--Contact Information and Salary-->
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<label for="email">Email:</label>
+            <input id="email" type="text" name="email" placeholder="email" required>&nbsp&nbsp
+            <label for="phone-number">Phone Number:</label>
+            <input id="phone-number" type="text" name="phone-number" placeholder="(415)867-5309"required><br><br>
+            <label for="salary">Salary Requirement:</label>
+            <input id="salary" type="text" name="salary" placeholder="$1.00" required><br><br>
+            
+            <!--Dropdown Job Menu-->
+            <label for="preferred">Preferred Title:</label>
+            <select id="preferred" name="preferred">
+
+                {% for job in jobs %}
+                    <option value="{{ job }}"> {{ job }} </option>
+                {% endfor %}
+
+            </select><br><br>
+
+            <!--Submit Button-->
+            <input type="submit" name="submit" value="submit">
+        </div>
+        </div>
+</form>
+
+{% endblock %}
+

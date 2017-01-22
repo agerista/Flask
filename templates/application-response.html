@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Application Success {% endblock %} 
+
+{% block content %}
+
+    <div class="form-box">
+        <h3>Thank you, {{ name }} {{ surname }}, for applying to be a {{ job }}.  
+            Your minimum salary requirement is {{ "${:,.2f}".format(minimum|float) }}.  
+            We will contact you shortly to present you with matching 
+            job opportunities!</h3>
+    </div>
+
+{% endblock %}
+
+
+
